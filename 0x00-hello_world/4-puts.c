@@ -6,7 +6,7 @@
  *
  * Return: Always (Success)
  */
- 
+
  int main(void)
  {
  	char str1[52];
