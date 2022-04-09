@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
  * main - Entry point
@@ -11,15 +10,12 @@ int main(void)
 {
 	int x;
 
-	for (x = 'A'; x <= 'Z'; ++x)
+	for (x = 0; x < 10; ++x)
 	{
-		if (x != 'Q' && x != 'E')
-		{
-			putchar(tolower(x));
-		}
+		printf("%d", x);
 	}
-
-	putchar('\n');
+	printf("\n");
 
 	return (0);
+
 }

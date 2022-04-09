@@ -9,17 +9,16 @@
 
 int main(void)
 {
-	int x;
+	int x, y;
 
-	for (x = 'A'; x <= 'Z'; ++x)
+	for (x = 0; x < 10; ++x)
 	{
-		if (x != 'Q' && x != 'E')
-		{
-			putchar(tolower(x));
-		}
+		putchar('0' + x);
 	}
-
+	for (y = 'A'; y <= 'F'; ++y)
+	{
+		putchar(tolower(y));
+	}
 	putchar('\n');
-
 	return (0);
 }

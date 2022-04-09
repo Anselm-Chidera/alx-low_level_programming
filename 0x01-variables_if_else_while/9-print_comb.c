@@ -4,22 +4,22 @@
 /**
  * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Return: Always 0 (success)
  */
 
 int main(void)
 {
 	int x;
 
-	for (x = 'A'; x <= 'Z'; ++x)
+	for (x = 0; x < 10; ++x)
 	{
-		if (x != 'Q' && x != 'E')
-		{
-			putchar(tolower(x));
-		}
+		putchar(48 + x);
+			if (x < 9)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 	}
-
 	putchar('\n');
-
 	return (0);
 }

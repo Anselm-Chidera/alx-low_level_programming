@@ -11,15 +11,10 @@ int main(void)
 {
 	int x;
 
-	for (x = 'A'; x <= 'Z'; ++x)
+	for (x = 'Z'; x >= 'A'; --x)
 	{
-		if (x != 'Q' && x != 'E')
-		{
-			putchar(tolower(x));
-		}
+	putchar(tolower(x));
 	}
-
 	putchar('\n');
-
 	return (0);
 }
