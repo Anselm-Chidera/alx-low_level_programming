@@ -12,6 +12,7 @@ int main(void)
 	long int b = 2;
 
 	for (i = 0; i < 50; ++i);
+	{
 
 	printf("%ld", a);
 		if (i < 49)
@@ -20,6 +21,7 @@ int main(void)
 			a = b - a;
 			printf(", ");
 		}
+	}
 
 	putchar('\n');
 
