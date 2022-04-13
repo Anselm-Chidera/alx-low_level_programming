@@ -13,7 +13,7 @@ int main(void)
 
 	for (i = 0; i < 50; ++i);
 
-		printf("%ld", a);
+	printf("%ld", a);
 		if (i < 49)
 		{
 			b += a;
