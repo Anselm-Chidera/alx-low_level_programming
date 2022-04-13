@@ -10,8 +10,8 @@ int main(void)
 	int i;
 	long int a = 1;
 	long int b = 2;
-
-	for (i = 0; i < 50; ++i);
+	
+	for(i = 0; i < 50; ++i);
 
 	{
 		printf("%ld", a);

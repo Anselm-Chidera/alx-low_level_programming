@@ -1,6 +1,6 @@
 #include "main.h"
 
-/*
+/**
  * print_alphabet_x10 - prints d alphabet in lowercase, followed by a new line.
  */
 
