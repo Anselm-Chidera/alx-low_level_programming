@@ -8,20 +8,13 @@
 
 void rev_strin(char *s)
 {
-	int i = 0;
-	int aux = 0;
-	char ltemp;
+	int len = 0, index = 0;
+	char tmp;
 
-	while (*(s + i) != '\0')
-		i += 1;
-	i -= 1;
-
-	while (aux < i)
+	for (index = len - 1; index >= len / 2; index--)
 	{
-		ltemp = s[i];
-		s[i] = s[aux];
-		s[aux] = ltemp;
-		aux++;
-		i--;
+		tmp = s[index];
+		s[index] = s[len - index - 1];
+		s[len - index - 1] = tmp;
 	}
 }
