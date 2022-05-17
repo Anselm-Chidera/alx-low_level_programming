@@ -1,26 +1,26 @@
-#include "variadic_functions.h"
 #include <stdarg.h>
+#include "variadic_functions.h"
+#include <stdio.h>
 
 /**
- * sum_them_all - is function which sums given number of arguments
- * @n: is unsigned const int
- *
- * Return: returns the sum
-**/
+ * sum_them_all - Sums all the argument used
+ * @n: number of entries
+ * Return: 0 if no input, otherwise return sum
+ */
+
 int sum_them_all(const unsigned int n, ...)
 {
-unsigned int sum = 0, i;
-va_list ls;
+	va_list elem;
+	int sum = 0;
+	unsigned int sz;
 
-va_start(ls, n);
+	if (n == 0)
+		return (0);
+	va_start(elem, n);
 
-for (i = 0; i < n; i++)
-sum += va_arg(ls, int);
+	for (sz = 0; sz < n; sz++)
+		sum += va_arg(elem, int);
 
-va_end(ls);
-
-return (sum);
-
-if (n == 0)
-return (0);
+	va_end(elem);
+	return (sum);
 }
