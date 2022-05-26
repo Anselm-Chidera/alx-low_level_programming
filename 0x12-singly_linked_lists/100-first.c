@@ -1,14 +1,12 @@
 #include <stdio.h>
 
-void init(void) __attribute__((constructor));
-
 /**
- * init - execute before main
+ * execute_before_main - executes this function before main function
+ * Note: made possible by prior declar of "__attribute__ ((constructor))"
  */
-void init(void)
+
+void __attribute__ ((constructor)) execute_before_main()
 {
-	printf("%s\n%s\n",
-	"You're beat! and yet, you must allow,",
-	"I bore my house upon my back!"
-	);
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }

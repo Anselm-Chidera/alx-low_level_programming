@@ -1,75 +1,49 @@
-include "lists.h"
+#include "lists.h"
 
 /**
- * _strlen - calculate the length of a string
- * @st: the string to calculate the string length
- *
- * Return: the string length
+ * _strlen - find string length
+ * @ctr: string
+ * Return: length
  */
-size_t _strlen(const char *st)
+int _strlen(const char *ctr)
 {
-	const char *ps = st;
+	int i;
 
-	if (st)
-	{
-		while (*ps)
-			++ps;
-	}
-	return (ps - st);
+	i = 0;
+	while (ctr[i] != '\0')
+		i++;
+	return (i);
 }
 
 /**
- * _strdup - create a new array containing a copy of the given string
- * @st: a pointer to the string to copy
- *
- * Return: If st is NULL or if memory allocation fails, return NULL.
- * else return a pointer to the new copy
+ * add_node - add node to beginning of linked list
+ * @head: linked list
+ * @str: data for new node
+ * Return: address of new element, or NULL if failed
  */
-char *_strdup(const char *st)
+
+list_t *add_node(list_t **head, const char *str)
 {
-	char *dup = NULL;
-	size_t size = 0;
+	list_t *new_node;
 
-	if (!st)
+	if (str == NULL)
+		return (NULL);
+	if (strdup(str) == NULL)
 		return (NULL);
 
-	while (st[size++])
-		;
-
-	dup = malloc(sizeof(char) * size);
-	if (!dup)
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
 		return (NULL);
 
-	while (size--)
-		dup[size] = st[size];
+	new_node->str = strdup(str);
+	new_node->len = _strlen(str);
 
-	return (dup);
-}
+	if (head == NULL)
+		new_node->next = NULL;
+	else
+		new_node->next = *head;
 
-/**
- * add_node - putting a string at the beginning of the list
- * @head: a pointer to the address of the first list node
- * @st: the string to add to the list
- *
- * Return: If memory allocation fails, return NULL. Otherwise, return the
- * address of the new no
- */
-list_t *add_node(list_t **head, const char *st)
-{
-	list_t *new = NULL;
+	*head = new_node;
 
-	if (!head)
-		return (NULL);
-
-	new = malloc(sizeof(list_t));
-	if (!new)
-		return (NULL);
-
-	new->str = _strdup(st);
-	new->len = (_strlen(new->str));
-	new->next = *head;
-
-	*head = new;
-
-	return (new);
+	return (new_node);
 }
