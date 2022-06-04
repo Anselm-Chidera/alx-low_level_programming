@@ -2,7 +2,7 @@
 
 int main()
 {
-	int n = 0;
+	int n = 10;
 	int array[5];
 	int i = 5;
 
